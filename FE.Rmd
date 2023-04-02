@@ -62,14 +62,15 @@ pl2 <- ggplotly(p2)
 subplot(pl1, pl2, nrows = 2)
 ```
 
-
 ## Part two: quantmod and relate package
 ## 6) Download “AOT.BK” stock price daily data from 1 Jan 2020 to 28 Feb 2023. (2 points)
 
 ```{r}
 library(quantmod)
-getSymbols("AOT.BK", from = as.Date("2020-01-01"), to=as.Date("2023-02-28"), periodicity = "daily")
+getSymbols("AOT.BK", from = as.Date("2020-01-01"), to = as.Date("2023-02-28"), periodicity = "daily")
+```
 
-
+## 7) Plot the close price with the title “Airports of Thailand(AOT) daily price” and color line is red. (3 point)
+```{r}
 plot(AOT.BK$AOT.BK.Close, main = "Airports of Thailand(AOT) daily price", col = "red")
 ```
