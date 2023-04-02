@@ -25,3 +25,10 @@ ggplot(DF, aes(x = money, fill = gender, color = I("black"))) +
   geom_histogram() +
   facet_wrap(. ~ gender) + 
 ``` 
+
+## 3) Make this plot (3 point)
+```{r}
+ggplot(DF) +
+  aes(x = month, fill = gender) +
+  geom_bar(position = "dodge2")
+```
