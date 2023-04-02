@@ -76,6 +76,6 @@ plot(AOT.BK$AOT.BK.Close, main = "Airports of Thailand(AOT) daily price", col = 
 ```
 ## 8) Make this plot (3 point)
 ```{r, fig.keep='last'}
-chartSeries(AOT.BK, type = "auto", theme = chartTheme("white"), name = "Airports of Thailand(AOT) daily price")
+chartSeries(AOT.BK, theme = chartTheme("white"), name = "Airports of Thailand(AOT) daily price")
 addRSI()
 ```
