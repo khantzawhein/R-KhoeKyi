@@ -50,3 +50,14 @@ p2 <- ggplot(DF) +
 
 (plot1 + ggplot()) / (ggplot() | plot2)
 ```
+
+
+## 5) make this interaactive plot (2 points)
+
+```{r}
+library(plotly)
+pl1 <- ggplotly(p1)
+pl2 <- ggplotly(p2)
+
+subplot(pl1, pl2, nrows = 2)
+```
