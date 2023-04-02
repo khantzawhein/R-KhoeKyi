@@ -74,3 +74,8 @@ getSymbols("AOT.BK", from = as.Date("2020-01-01"), to = as.Date("2023-02-28"), p
 ```{r}
 plot(AOT.BK$AOT.BK.Close, main = "Airports of Thailand(AOT) daily price", col = "red")
 ```
+## 8) Make this plot (3 point)
+```{r, fig.keep='last'}
+chartSeries(AOT.BK, type = "auto", theme = chartTheme("white"), name = "Airports of Thailand(AOT) daily price")
+addRSI()
+```
