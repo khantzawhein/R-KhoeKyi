@@ -37,12 +37,13 @@ ggplot(DF) +
 ## 4) Make this plot (2 points)
 
 ```{r}
-plot1 <- ggplot(DF, aes(x = money, fill = gender, color = I("black"))) +
+library(patchwork)
+p1 <- ggplot(DF, aes(x = money, fill = gender, color = I("black"))) +
   ggtitle("Histogram of money") +
   geom_histogram() +
   facet_wrap(. ~ gender)
 
-plot2 <- ggplot(DF) +
+p2 <- ggplot(DF) +
   aes(x = month, fill = gender) +
   geom_bar(position = "dodge2") +
   ggtitle("barplot")
