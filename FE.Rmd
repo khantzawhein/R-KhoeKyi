@@ -28,10 +28,16 @@ ggplot(DF, aes(x = money, fill = gender, color = I("black"))) +
 
 ## 3) Make this plot (3 point)
 ```{r}
-ggplot(DF) +
-  aes(x = month, fill = gender) +
-  geom_bar(position = "dodge2") +
-  ggtitle("barplot")
+library(dplyr)
+
+data <- group_by(DF, month, gender)
+data <- summarize(data, count = sum(money))
+
+plot2 <- ggplot(data, aes(x = month, y = count, fill = gender)) + 
+  geom_bar(position = "dodge2", stat = "identity") + 
+  ggtitle("Barplot")
+
+plot2
 ```
 
 ## 4) Make this plot (2 points)
