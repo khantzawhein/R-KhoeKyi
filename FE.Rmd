@@ -1,0 +1,27 @@
+## Data Set for part one
+
+```{r}
+set.seed(50)
+N <- 1000
+money <- rnorm(N, mean = 500, sd = 5)
+month <- sample(month.abb,size = N, replace =T)
+gender <- sample(c("M","F"), size = N,replace =T)
+```
+
+## Part one: ggplot2 and relate package
+## 1) From the vector money, month, and gender. Please create this data frame name DF.(2 points)
+
+```{r} 
+DF <- data.frame(money, gender = factor(gender, c("M", "F")), month = factor(month, levels = month.abb))
+str(DF)
+```
+
+## 2) Make this plot (3 point)
+
+```{r}
+library(ggplot2)
+ggplot(DF, aes(x = money, fill = gender, color = I("black"))) +
+  ggtitle("Histogram of money") +
+  geom_histogram() +
+  facet_wrap(. ~ gender) + 
+``` 
