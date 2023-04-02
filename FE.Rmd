@@ -30,5 +30,6 @@ ggplot(DF, aes(x = money, fill = gender, color = I("black"))) +
 ```{r}
 ggplot(DF) +
   aes(x = month, fill = gender) +
-  geom_bar(position = "dodge2")
+  geom_bar(position = "dodge2") +
+  ggtitle("barplot")
 ```
